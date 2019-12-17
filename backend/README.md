@@ -1,6 +1,6 @@
 # backeng
 
-## Rub
+## Run
 
 ```
 gradlew bootrun
