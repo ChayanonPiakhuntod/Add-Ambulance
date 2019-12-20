@@ -64,13 +64,13 @@ public class AmbulanceController {
         return provinceRepository.findAll().stream().collect(Collectors.toList());
     }
 
-    @PostMapping("/ambulance/{bradid}/{ambulancemodel}/{typeid}/{ambulancenum}/{enginenum}/{licenseplate}/{provinceid}")
-    public Ambulance newAmbulance(Ambulance newAmbulance, @PathVariable long bradid,
+    @PostMapping("/ambulance/{brandid}/{ambulancemodel}/{typeid}/{ambulancenum}/{enginenum}/{licenseplate}/{provinceid}")
+    public Ambulance newAmbulance(Ambulance newAmbulance, @PathVariable long brandid,
             @PathVariable String ambulancemodel, @PathVariable long typeid, @PathVariable String ambulancenum,
             @PathVariable String enginenum, @PathVariable String licenseplate, @PathVariable long provinceid)
             throws ParseException {
 
-        AmbulanceBrand brand = ambulancebrandRepository.findByBrandid(bradid);
+        AmbulanceBrand brand = ambulancebrandRepository.findByBrandid(brandid);
         AmbulanceType type = ambulancetypeRepository.findByTypeid(typeid);
         Province province = provinceRepository.findByProvinceid(provinceid);
 
